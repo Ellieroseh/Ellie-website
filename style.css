@@ -1,0 +1,5 @@
+.heroHeader{
+    background-image: url("./Images/heroHeaderBackground.png");
+    height: 33vh;
+    background-size: contain;
+}
