@@ -1,8 +1,43 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
+import { convertTypeAcquisitionFromJson } from 'typescript'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+
+var array = ["monkey","cat","chihuahua"]
+
+array.forEach((animal:string)=>{
+  console.log(animal+"!")
+})
+
+//Stores counter in the state
+const [counter, setcounter] = useState(1)
+function incrementCounter(){
+  setcounter((prevCounter)=>{
+    return prevCounter + 1
+  })
+}
+// Fetch GET Implementation
+// // Gets Discord user details from Discord API
+// async function getUser(discordId) {
+// 	// API Endpoint
+// 	const url = 'https://ellie-bot.fortnite.ca/api/pokemons/?ownerId=' + discordId;
+// 	const response = await fetch(url, {
+// 	  method: 'GET',
+// 	  headers: {
+// 		Accept: 'application/json',
+// 	  },
+// 	  redirect: 'follow',
+// 	});
+// 	if (response.ok) {
+// 	  return await response.json();
+// 	} else {
+// 	  throw await response.json();
+// 	}
+//   }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -11,9 +46,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <button onClick={()=>incrementCounter()}>
+      </button>
+
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to PokéBot
+          Welcome to PokéBot {counter}
         </h1>
 
         <p className={styles.description}>
